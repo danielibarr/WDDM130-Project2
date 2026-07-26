@@ -1,0 +1,81 @@
+<%- include("partials/header") %>
+
+<h2>Request Confirmation</h2>
+
+<p>
+    Your service request has been submitted successfully.
+</p>
+
+
+<h3>Student Information</h3>
+
+<p>
+    <strong>Name:</strong> <%= requestData.fullName %>
+</p>
+
+<p>
+    <strong>Student ID:</strong> <%= requestData.studentId %>
+</p>
+
+<p>
+    <strong>Email:</strong> <%= requestData.email %>
+</p>
+
+<p>
+    <strong>Program:</strong> <%= requestData.program %>
+</p>
+
+
+<h3>Request Details</h3>
+
+<p>
+    <strong>Service Type:</strong>
+    <%= requestData.serviceType %>
+</p>
+
+<p>
+    <strong>Urgency:</strong>
+    <%= requestData.urgency %>
+</p>
+
+<p>
+    <strong>Contact Method:</strong>
+    <%= requestData.contact %>
+</p>
+
+<p>
+    <strong>Description:</strong>
+    <%= requestData.description %>
+</p>
+
+
+<h3>Uploaded Student Card</h3>
+
+<img 
+    src="/uploads/<%= processed.uploadedImage %>"
+    alt="Student Card"
+    width="300"
+>
+
+<p>
+    <strong>Request Number:</strong>
+    <%= processed.requestNumber %>
+</p>
+
+<p>
+    <strong>Estimated Response:</strong>
+    <%= processed.responseTime %>
+</p>
+
+<p>
+    <strong>Status:</strong>
+    <%= processed.status %>
+</p>
+
+<p>
+    <strong>Submission Date:</strong>
+    <%= processed.date %>
+</p>
+
+
+<%- include("partials/footer") %>

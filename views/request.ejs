@@ -1,0 +1,191 @@
+<%- include("partials/header") %>
+<% if (errors) { %>
+
+    <div class="error-box">
+
+        <h3>Please fix the following errors:</h3>
+
+        <ul>
+
+            <% errors.forEach(error => { %>
+
+                <li>
+                    <%= error %>
+                </li>
+
+            <% }) %>
+
+        </ul>
+
+    </div>
+
+<% } %>
+
+<h2>Service Request Form</h2>
+
+<form action="/request" method="POST" enctype="multipart/form-data">
+
+    <label>
+        Student Full Name:
+    </label>
+    <br>
+    <input 
+    type="text" 
+    name="fullName"
+    value="<%= requestData ? requestData.fullName : '' %>"
+    >
+    <br><br>
+
+
+    <label>
+        Student ID:
+    </label>
+    <br>
+    <input 
+    type="text" 
+    name="studentId"
+    value="<%= requestData ? requestData.studentId : '' %>"
+    >
+    <br><br>
+
+
+    <label>
+        Email Address:
+    </label>
+    <br>
+    <input 
+    type="email" 
+    name="email"
+    value="<%= requestData ? requestData.email : '' %>"
+    >
+    <br><br>
+
+
+    <label>
+        Program Name:
+    </label>
+    <br>
+    <input 
+    type="text" 
+    name="program"
+    value="<%= requestData ? requestData.program : '' %>"
+    >
+    <br><br>
+
+
+    <label>
+        Service Type:
+    </label>
+    <br>
+
+    <select name="serviceType">
+
+        <option value="">
+            Select a service
+        </option>
+
+
+        <option 
+            value="ID Card Replacement"
+            <%= requestData && requestData.serviceType === "ID Card Replacement" ? "selected" : "" %>
+            >
+            ID Card Replacement
+        </option>
+
+
+        <option 
+            value="Enrollment Letter"
+            <%= requestData && requestData.serviceType === "Enrollment Letter" ? "selected" : "" %>
+            >
+            Enrollment Letter
+        </option>
+
+
+        <option 
+            value="Academic Support"
+            <%= requestData && requestData.serviceType === "Academic Support" ? "selected" : "" %>
+            >
+            Academic Support
+        </option>
+    </select>
+
+    <br><br>
+
+
+    <label>
+        Urgency Level:
+    </label>
+
+    <br>
+
+    <input 
+    type="radio" 
+    name="urgency" 
+    value="Low"
+    <%= requestData && requestData.urgency === "Low" ? "checked" : "" %>
+    >
+    Low
+
+
+    <input 
+    type="radio" 
+    name="urgency" 
+    value="Medium"
+    <%= requestData && requestData.urgency === "Medium" ? "checked" : "" %>
+    >
+    Medium
+
+
+    <input 
+    type="radio" 
+    name="urgency" 
+    value="High"
+    <%= requestData && requestData.urgency === "High" ? "checked" : "" %>
+    >
+    High
+
+    <br><br>
+
+
+    <label>
+        Request Description:
+    </label>
+    <br>
+
+    <textarea name="description"><%= requestData ? requestData.description : '' %></textarea>
+
+    <br><br>
+
+
+    <label>
+        Preferred Contact Method:
+    </label>
+    <br>
+
+    <input type="radio" name="contact" value="Email">
+    Email
+
+    <input type="radio" name="contact" value="Phone">
+    Phone
+
+    <br><br>
+
+
+    <label>
+        Student Card Image:
+    </label>
+    <br>
+
+    <input type="file" name="studentCard">
+
+    <br><br>
+
+
+    <button type="submit">
+        Submit Request
+    </button>
+
+
+</form>
+
+<%- include("partials/footer") %>

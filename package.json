@@ -1,0 +1,20 @@
+{
+  "name": "wddm130-project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "...",
+    "express": "...",
+    "express-fileupload": "..."
+  },
+  "devDependencies": {
+    "nodemon": "..."
+  }
+}
