@@ -1,7 +1,7 @@
 {
   "name": "wddm130-project2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Student Service Portal - WDDM130 Project 2",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -10,11 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ejs": "...",
-    "express": "...",
-    "express-fileupload": "..."
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-fileupload": "^1.5.1"
   },
   "devDependencies": {
-    "nodemon": "..."
+    "nodemon": "^3.1.10"
   }
 }
